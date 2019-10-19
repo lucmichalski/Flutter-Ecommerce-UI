@@ -37,7 +37,7 @@ class Welcome extends StatelessWidget {
                         onPressed: () {},
                         textColor: Colors.white,
                         hoverColor: Colors.white,
-                        child: new Text("Button text"),
+                        child: new Text("Get Start"),
                         highlightedBorderColor: Colors.white,
                         borderSide: BorderSide(color: Colors.white),
                         shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0))
