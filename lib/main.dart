@@ -9,6 +9,9 @@ class ShopApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shop App',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        accentColor: Color(0xFF202020),
+      ),
       home: new Welcome(),
     );
   }
