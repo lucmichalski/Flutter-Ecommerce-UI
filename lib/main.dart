@@ -12,7 +12,10 @@ class ShopApp extends StatelessWidget {
       theme: ThemeData(
         accentColor: Color(0xFF202020),
       ),
-      home: new Welcome(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Welcome(),
+      },
     );
   }
 }
