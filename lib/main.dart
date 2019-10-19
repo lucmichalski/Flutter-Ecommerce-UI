@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app_ui/screens/home_screen.dart';
 import 'package:flutter_ecommerce_app_ui/screens/welcome_screen.dart';
 
 void main() => runApp(ShopApp());
@@ -15,6 +16,7 @@ class ShopApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Welcome(),
+        '/home': (context) => Home(),
       },
     );
   }

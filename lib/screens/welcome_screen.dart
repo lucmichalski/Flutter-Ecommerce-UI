@@ -34,7 +34,9 @@ class Welcome extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     height: 45.0,
                     child: new OutlineButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/home');
+                        },
                         textColor: Colors.white,
                         hoverColor: Colors.white,
                         child: new Text("Get Start"),
