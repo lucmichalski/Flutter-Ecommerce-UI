@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/category_card.dart';
+import 'package:flutter_ecommerce_app_ui/widgets/product_card.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/trend_card.dart';
 
 class Home extends StatefulWidget {
@@ -30,6 +31,7 @@ class _HomeState extends State<Home> {
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(height: 10.0,),
                   banner(),
@@ -88,17 +90,27 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   simpleBanner('Showroom', 'We bet you will love'),
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20.0),
-                          child: Text('Products lists', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
-                        ),
-                        SizedBox(height: 10.0,),
-                      ],
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text('Products lists', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
+                      ),
+                      SizedBox(height: 10.0,),
+                      Container(
+                        child: GridView.count(
+                          shrinkWrap: true,
+                          primary: false,
+                          crossAxisCount: 2, children: <Widget>[
+                          // One product
+                          ProductCard(),
+                          ProductCard(),
+                          ProductCard(),
+                          ProductCard(),
+                        ],),
+                      )
+                    ],
                   ),
                 ],
               ),
