@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
           child: Container(
             child: ListView(
               children: <Widget>[
+                SizedBox(height: 10.0,),
                 banner(),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10.0),
@@ -36,7 +37,7 @@ class _HomeState extends State<Home> {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text('Categories', style: TextStyle(color: Color(0xFF202020), fontSize: 11.0,),),
+                        child: Text('Categories', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
                       ),
                       SizedBox(height: 10.0,),
                       Container(
