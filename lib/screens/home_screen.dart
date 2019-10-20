@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/category_card.dart';
+import 'package:flutter_ecommerce_app_ui/widgets/trend_card.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -60,7 +61,30 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Container(
-                  child: Text('Hello world'),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text('New trends', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
+                      ),
+                      SizedBox(height: 10.0,),
+                      Container(
+                        height: 200.0,
+                        padding: EdgeInsets.only(left: 20.0),
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1289&q=80',),
+                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',),
+                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',),
+                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80',),
+                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1454607909945-7e3be3f32602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1345&q=80',),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 Container(
                   child: Text('Hello world'),
