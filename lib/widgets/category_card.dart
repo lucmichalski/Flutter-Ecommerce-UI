@@ -17,7 +17,7 @@ class CategoryCard extends StatelessWidget {
         margin: EdgeInsets.only(right: 10.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0),
-          image: DecorationImage(image: AssetImage(this.categoryImage), fit: BoxFit.cover)
+          image: DecorationImage(image: NetworkImage(this.categoryImage), fit: BoxFit.cover)
         ),
         child: Container(
           decoration: BoxDecoration(

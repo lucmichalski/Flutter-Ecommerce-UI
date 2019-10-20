@@ -47,13 +47,12 @@ class _HomeState extends State<Home> {
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: <Widget>[
-                            CategoryCard(categoryName: 'Category 1', categoryImage: 'assets/images/categories/category_1.jpg'),
-                            CategoryCard(categoryName: 'Category 2', categoryImage: 'assets/images/categories/category_2.jpg'),
-                            CategoryCard(categoryName: 'Category 3', categoryImage: 'assets/images/categories/category_3.jpg'),
-                            CategoryCard(categoryName: 'Category 4', categoryImage: 'assets/images/categories/category_1.jpg'),
-                            CategoryCard(categoryName: 'Category 5', categoryImage: 'assets/images/categories/category_1.jpg'),
-                            CategoryCard(categoryName: 'Category 6', categoryImage: 'assets/images/categories/category_1.jpg'),
-                            CategoryCard(categoryName: 'Category 7', categoryImage: 'assets/images/categories/category_1.jpg'),
+                            CategoryCard(categoryName: 'Watch', categoryImage: 'https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'),
+                            CategoryCard(categoryName: 'Shoes', categoryImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
+                            CategoryCard(categoryName: 'Backpack', categoryImage: 'https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=669&q=80'),
+                            CategoryCard(categoryName: 'Makeups', categoryImage: 'https://images.unsplash.com/photo-1556228578-dd539282b964?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=654&q=80'),
+                            CategoryCard(categoryName: 'Cars', categoryImage: 'https://images.unsplash.com/photo-1542038428-25a73671ca6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'),
+                            CategoryCard(categoryName: 'Inside', categoryImage: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80'),
                           ],
                         ),
                       )
