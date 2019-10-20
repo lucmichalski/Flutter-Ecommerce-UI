@@ -11,6 +11,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         title: null,
@@ -22,89 +23,90 @@ class _HomeState extends State<Home> {
           IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {},)
         ],
       ),
-      body: Container(
-        color: Colors.white,
-        child: RefreshIndicator(
-          onRefresh: _handleRefresh,
-          child: Container(
-            child: ListView(
-              children: <Widget>[
-                SizedBox(height: 10.0,),
-                banner(),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text('Categories', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
-                      ),
-                      SizedBox(height: 10.0,),
-                      Container(
-                        padding: EdgeInsets.only(left: 20.0),
-                        height: 113.0,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: <Widget>[
-                            CategoryCard(categoryName: 'Watch', categoryImage: 'https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'),
-                            CategoryCard(categoryName: 'Shoes', categoryImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
-                            CategoryCard(categoryName: 'Backpack', categoryImage: 'https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=669&q=80'),
-                            CategoryCard(categoryName: 'Makeups', categoryImage: 'https://images.unsplash.com/photo-1556228578-dd539282b964?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=654&q=80'),
-                            CategoryCard(categoryName: 'Cars', categoryImage: 'https://images.unsplash.com/photo-1542038428-25a73671ca6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'),
-                            CategoryCard(categoryName: 'Inside', categoryImage: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80'),
-                          ],
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 10.0,),
+                  banner(),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Text('Categories', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
                         ),
-                      )
-                    ],
+                        SizedBox(height: 10.0,),
+                        Container(
+                          padding: EdgeInsets.only(left: 20.0),
+                          height: 113.0,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              CategoryCard(categoryName: 'Watch', categoryImage: 'https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'),
+                              CategoryCard(categoryName: 'Shoes', categoryImage: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
+                              CategoryCard(categoryName: 'Backpack', categoryImage: 'https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=669&q=80'),
+                              CategoryCard(categoryName: 'Makeups', categoryImage: 'https://images.unsplash.com/photo-1556228578-dd539282b964?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=654&q=80'),
+                              CategoryCard(categoryName: 'Cars', categoryImage: 'https://images.unsplash.com/photo-1542038428-25a73671ca6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'),
+                              CategoryCard(categoryName: 'Inside', categoryImage: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80'),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text('New trends', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
-                      ),
-                      SizedBox(height: 10.0,),
-                      Container(
-                        height: 200.0,
-                        padding: EdgeInsets.only(left: 20.0),
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: <Widget>[
-                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1289&q=80',),
-                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',),
-                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',),
-                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80',),
-                            TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1454607909945-7e3be3f32602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1345&q=80',),
-                          ],
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Text('New trends', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
                         ),
-                      )
-                    ],
+                        SizedBox(height: 10.0,),
+                        Container(
+                          height: 200.0,
+                          padding: EdgeInsets.only(left: 20.0),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1289&q=80',),
+                              TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',),
+                              TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',),
+                              TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80',),
+                              TrendCard(title: 'Pastels D’hiver', subTitle: 'Nuance discrètes', image: 'https://images.unsplash.com/photo-1454607909945-7e3be3f32602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1345&q=80',),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                simpleBanner('Showroom', 'We bet you will love'),
-                Container(
-                  child: Text('Hello world'),
-                ),
-                Container(
-                  child: Text('Hello world'),
-                ),
-              ],
+                  simpleBanner('Showroom', 'We bet you will love'),
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Text('Products lists', style: TextStyle(color: Color(0xFF202020), fontSize: 13.0, fontWeight: FontWeight.w400),),
+                        ),
+                        SizedBox(height: 10.0,),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ),
-      ),
+          )
+        ],
+      )
     );
-  }
-
-  Future<Null> _handleRefresh() async {
-    setState(() {
-    });
-
-    return null;
   }
 
   Widget banner() {
@@ -117,6 +119,7 @@ class _HomeState extends State<Home> {
             image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1542889601-399c4f3a8402?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), fit: BoxFit.cover)
         ),
         child: Container(
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.bottomCenter,
