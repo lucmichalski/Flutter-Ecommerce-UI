@@ -116,7 +116,7 @@ class _HomeState extends State<Home> {
         height: 117.0,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5.0),
-            image: DecorationImage(image: AssetImage("assets/images/banners/banner-1.jpg"), fit: BoxFit.cover)
+            image: DecorationImage(image: NetworkImage("https://images.unsplash.com/photo-1542889601-399c4f3a8402?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"), fit: BoxFit.cover)
         ),
         child: Container(
           decoration: BoxDecoration(
