@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app_ui/widgets/category_card.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -39,27 +40,18 @@ class _HomeState extends State<Home> {
                       ),
                       SizedBox(height: 10.0,),
                       Container(
+                        padding: EdgeInsets.only(left: 20.0),
                         height: 113.0,
                         child: ListView(
-                          padding: EdgeInsets.only(left: 20.0),
                           scrollDirection: Axis.horizontal,
                           children: <Widget>[
-                            InkWell(
-                              onTap: () { print('Categories pressed'); },
-                              child: Container(
-                                height: 100.0,
-                                width: 114.0,
-                                padding: EdgeInsets.all(10.0),
-                                margin: EdgeInsets.only(right: 10.0),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                  image: DecorationImage(image: AssetImage('assets/images/categories/category_1.jpg'), fit: BoxFit.cover)
-                                ),
-                                child: Center(
-                                  child: Text('Category 1'.toUpperCase(), style: TextStyle(color: Colors.white, fontSize: 11.0, fontWeight: FontWeight.bold),),
-                                ),
-                              ),
-                            ),
+                            CategoryCard(categoryName: 'Category 1', categoryImage: 'assets/images/categories/category_1.jpg'),
+                            CategoryCard(categoryName: 'Category 2', categoryImage: 'assets/images/categories/category_2.jpg'),
+                            CategoryCard(categoryName: 'Category 3', categoryImage: 'assets/images/categories/category_3.jpg'),
+                            CategoryCard(categoryName: 'Category 4', categoryImage: 'assets/images/categories/category_1.jpg'),
+                            CategoryCard(categoryName: 'Category 5', categoryImage: 'assets/images/categories/category_1.jpg'),
+                            CategoryCard(categoryName: 'Category 6', categoryImage: 'assets/images/categories/category_1.jpg'),
+                            CategoryCard(categoryName: 'Category 7', categoryImage: 'assets/images/categories/category_1.jpg'),
                           ],
                         ),
                       )
