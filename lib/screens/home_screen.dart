@@ -85,9 +85,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                Container(
-                  child: Text('Hello world'),
-                ),
+                simpleBanner('Showroom', 'We bet you will love'),
                 Container(
                   child: Text('Hello world'),
                 ),
@@ -139,6 +137,42 @@ class _HomeState extends State<Home> {
               SizedBox(height: 7.0),
               Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', style: TextStyle(color: Colors.white, fontSize: 9.0, height: 1.6),)
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget simpleBanner(String title, String subTitle) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Container(
+        height: 105.0,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5.0),
+            image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1557587136-b627c2d6e938?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'), fit: BoxFit.cover)
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  Colors.black.withOpacity(0.20),
+                  Colors.white.withOpacity(0.0)
+                ]
+            ),
+            borderRadius: BorderRadius.circular(5.0),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Showroom'.toUpperCase(), style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14.0),),
+                SizedBox(height: 6.0,),
+                Text(subTitle, style: TextStyle(color: Colors.white, fontSize: 11.0),)
+              ],
+            ),
           ),
         ),
       ),
