@@ -14,7 +14,6 @@ class TrendCard extends StatelessWidget {
       margin: EdgeInsets.only(right: 10.0),
       child: InkWell(
         onTap: () { print('Product trend pressed.'); },
-        splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         child: AspectRatio(
           aspectRatio: 2.5 / 2,
