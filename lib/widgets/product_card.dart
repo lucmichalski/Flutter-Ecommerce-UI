@@ -6,7 +6,9 @@ class ProductCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.0),
       child: InkWell(
-        onTap: () { print('Pressed on product'); },
+        onTap: () {
+          Navigator.pushNamed(context, '/product');
+        },
         highlightColor: Colors.transparent,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
