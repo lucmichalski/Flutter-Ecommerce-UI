@@ -7,6 +7,23 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
+
+  int _productCartCounter = 0;
+
+  void _incrementCartCounter() {
+    this.setState(() {
+      _productCartCounter++;
+    });
+  }
+
+  void _decrementCartCounter() {
+    this.setState(() {
+      if (_productCartCounter > 0) {
+        _productCartCounter--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +102,7 @@ class _ProductState extends State<Product> {
                           child: Container(
                             height: 40.0,
                             child: FlatButton(
-                              onPressed: () {},
+                              onPressed: () { _productModal(context); },
                               textColor: Colors.white,
                               color: Color(0xFF202020),
                               child: Text('Add to cart', style: TextStyle(
@@ -196,5 +213,93 @@ class _ProductState extends State<Product> {
         SizedBox(height: 10.0,),
       ],
     );
+  }
+
+  _productModal(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: new RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0),
+        topRight: Radius.circular(30.0))
+      ),
+      builder: (BuildContext context) {
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 15.0,),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80'), fit: BoxFit.cover)
+                      ),
+                    ),
+                    SizedBox(width: 20.0,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text('130.00 €', style: TextStyle(
+                            color: Colors.black, fontSize: 11.0),),
+                        SizedBox(height: 7,),
+                        Text('Pastels d’hiver', style: TextStyle(
+                            color: Colors.black, fontSize: 24.0),),
+                        Text('Nuance discrètes', style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w300),),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.0,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    FloatingActionButton(
+                      onPressed: () { _incrementCartCounter(); },
+                      elevation: 0,
+                      child: Icon(Icons.add, color: Color(0xFF202020), size: 15.0,),
+                      backgroundColor: Colors.grey[200],
+                      shape: new RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100.0))),
+                    ),
+                    Container(
+                      child: Text('$_productCartCounter', style: TextStyle(color: Color(0xFF202020), fontSize: 16.0, fontWeight: FontWeight.bold),),
+                    ),
+                    FloatingActionButton(
+                      onPressed: () { _decrementCartCounter(); },
+                      elevation: 0,
+                      child: Icon(Icons.remove, color: Color(0xFF202020), size: 15.0,),
+                      backgroundColor: Colors.grey[200],
+                      shape: new RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100.0))),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.0,),
+                Container(
+                  height: 45.0,
+                  width: double.infinity,
+                  child: FlatButton(
+                    onPressed: () {},
+                    textColor: Colors.white,
+                    color: Color(0xFF202020),
+                    child: Text('Add to cart', style: TextStyle(
+                        fontSize: 11.0,
+                        fontWeight: FontWeight.w400),),
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+    });
   }
 }
