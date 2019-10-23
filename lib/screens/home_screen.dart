@@ -104,10 +104,10 @@ class _HomeState extends State<Home> {
                           primary: false,
                           crossAxisCount: 2, children: <Widget>[
                           // One product
-                          ProductCard(),
-                          ProductCard(),
-                          ProductCard(),
-                          ProductCard(),
+                          ProductCard(1),
+                          ProductCard(2),
+                          ProductCard(3),
+                          ProductCard(4),
                         ],),
                       )
                     ],

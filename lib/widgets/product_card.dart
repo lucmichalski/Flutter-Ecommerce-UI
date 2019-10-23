@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class ProductCard extends StatelessWidget {
+
+  final int id;
+
+  ProductCard(this.id);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.0),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/product');
+          Navigator.pushNamed(context, ProductDetailRoute, arguments: {'id': this.id});
         },
         highlightColor: Colors.transparent,
         child: Column(

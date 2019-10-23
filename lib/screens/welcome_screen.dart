@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class Welcome extends StatelessWidget {
                     height: 45.0,
                     child: new OutlineButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/home');
+                          Navigator.pushReplacementNamed(context, HomeRoute);
                         },
                         textColor: Colors.white,
                         hoverColor: Colors.white,

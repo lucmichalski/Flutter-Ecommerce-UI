@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/trend_card.dart';
 
 class Product extends StatefulWidget {
+
+  final int id;
+
+  Product(this.id);
+
   @override
   _ProductState createState() => _ProductState();
 }
