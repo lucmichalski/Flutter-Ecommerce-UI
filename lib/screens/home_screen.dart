@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce_app_ui/models/product_model.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/category_card.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/product_card.dart';
 import 'package:flutter_ecommerce_app_ui/widgets/trend_card.dart';
@@ -9,6 +10,49 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  List<Product> listProducts = []
+    ..add(
+      Product(
+        0,
+        'Pastels d’hiver',
+        'Nuance Discrètes',
+        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1289&q=80',
+        123.0,
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      )
+    )
+    ..add(
+      Product(
+        1,
+        'Pastels d’hiver',
+        'Nuance Discrètes',
+        'https://images.unsplash.com/photo-1571928022638-dec65b7017c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1339&q=80',
+        123.0,
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      )
+    )
+    ..add(
+      Product(
+        2,
+        'Pastels d’hiver',
+        'Nuance Discrètes',
+        'https://images.unsplash.com/photo-1562887009-7924341c5cbc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
+        123.0,
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      )
+    )
+    ..add(
+      Product(
+        3,
+        'Pastels d’hiver',
+        'Nuance Discrètes',
+        'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
+        123.0,
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      )
+    );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,11 +147,8 @@ class _HomeState extends State<Home> {
                           shrinkWrap: true,
                           primary: false,
                           crossAxisCount: 2, children: <Widget>[
-                          // One product
-                          ProductCard(1),
-                          ProductCard(2),
-                          ProductCard(3),
-                          ProductCard(4),
+                          // Display Product card for each product in List.
+                          for(var product in listProducts) new ProductCard(product.getId(), product.getName(), product.getSubTitle(), product.getImage())
                         ],),
                       )
                     ],
