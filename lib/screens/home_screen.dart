@@ -148,7 +148,7 @@ class _HomeState extends State<Home> {
                           primary: false,
                           crossAxisCount: 2, children: <Widget>[
                           // Display Product card for each product in List.
-                          for(var product in listProducts) new ProductCard(product.getId(), product.getName(), product.getSubTitle(), product.getImage())
+                          for(var product in listProducts) new ProductCard(product.getId(), product.getName(), product.getSubTitle(), product.getPrice(), product.getImage(), product.getDescription())
                         ],),
                       )
                     ],

@@ -4,8 +4,13 @@ import 'package:flutter_ecommerce_app_ui/widgets/trend_card.dart';
 class Product extends StatefulWidget {
 
   final int id;
+  final String name;
+  final String subTitle;
+  final double price;
+  final String image;
+  final String description;
 
-  Product(this.id);
+  Product(this.id, this.name, this.subTitle, this.price, this.image, this.description);
 
   @override
   _ProductState createState() => _ProductState();
@@ -43,7 +48,7 @@ class _ProductState extends State<Product> {
                   height: 330.0,
                   decoration: BoxDecoration(
                       image: DecorationImage(image: NetworkImage(
-                          'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80'),
+                          widget.image),
                           fit: BoxFit.cover)
                   ),
                   child: Container(
@@ -60,12 +65,12 @@ class _ProductState extends State<Product> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        Text('130.00 €', style: TextStyle(
+                        Text(widget.price.toString() + ' €', style: TextStyle(
                             color: Colors.white, fontSize: 11.0),),
                         SizedBox(height: 7,),
-                        Text('Pastels d’hiver', style: TextStyle(
+                        Text(widget.name.toString(), style: TextStyle(
                             color: Colors.white, fontSize: 24.0),),
-                        Text('Nuance discrètes', style: TextStyle(
+                        Text(widget.subTitle.toString(), style: TextStyle(
                             color: Colors.white,
                             fontSize: 14.0,
                             fontWeight: FontWeight.w300),),
@@ -92,7 +97,7 @@ class _ProductState extends State<Product> {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                      widget.description.toString(),
                       style: TextStyle(color: Color(0xFFC4C4C4),
                           fontSize: 11.0,
                           height: 2.10),),

@@ -34,7 +34,7 @@ class ShopApp extends StatelessWidget {
           screen = Home();
           break;
         case ProductDetailRoute:
-          screen = Product(arguments['id']);
+          screen = Product(arguments['id'], arguments['name'], arguments['subTitle'], arguments['price'], arguments['image'], arguments['description']);
           break;
         default:
           return null;

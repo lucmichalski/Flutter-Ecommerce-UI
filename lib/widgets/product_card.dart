@@ -7,9 +7,11 @@ class ProductCard extends StatelessWidget {
   final int id;
   final String name;
   final String subTitle;
+  final double price;
   final String image;
+  final String description;
 
-  ProductCard(this.id, this.name, this.subTitle, this.image);
+  ProductCard(this.id, this.name, this.subTitle, this.price, this.image, this.description);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class ProductCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 20.0),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, ProductDetailRoute, arguments: {'id': this.id});
+          Navigator.pushNamed(context, ProductDetailRoute, arguments: {'id': this.id, 'name': this.name, 'subTitle': this.subTitle, 'price': this.price, 'image': this.image, 'description': this.description});
         },
         highlightColor: Colors.transparent,
         child: Column(
