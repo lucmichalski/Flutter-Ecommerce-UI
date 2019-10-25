@@ -248,19 +248,19 @@ class _ProductState extends State<Product> {
                       height: 100.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
-                        image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80'), fit: BoxFit.cover)
+                        image: DecorationImage(image: NetworkImage(widget.image), fit: BoxFit.cover)
                       ),
                     ),
                     SizedBox(width: 20.0,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text('130.00 €', style: TextStyle(
+                        Text(widget.price.toString() + ' €', style: TextStyle(
                             color: Colors.black, fontSize: 11.0),),
                         SizedBox(height: 7,),
-                        Text('Pastels d’hiver', style: TextStyle(
+                        Text(widget.name.toString(), style: TextStyle(
                             color: Colors.black, fontSize: 24.0),),
-                        Text('Nuance discrètes', style: TextStyle(
+                        Text(widget.subTitle.toString(), style: TextStyle(
                             color: Colors.black,
                             fontSize: 14.0,
                             fontWeight: FontWeight.w300),),
