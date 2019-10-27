@@ -1,16 +1,12 @@
-# flutter_ecommerce_app_ui
+# Flutter Ecommerce Application
 
-E-commerce application with Flutter.
+Integration of E-commerce application with Flutter.
 
-## Getting Started
+![Application thumbnail](https://firebasestorage.googleapis.com/v0/b/personal-website-b3399.appspot.com/o/projects%2Fflutter-app-ecommerce-thumbnail.png?alt=media&token=2014b6bb-3ae5-42ca-a939-e48b0d654827)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📕 Getting Started
+To install and start this project follow these commands
+````
+git clone https://github.com/mikayilsrt/Flutter-Ecommerce-UI.git
+cd Flutter-Ecommerce-UI
+````
